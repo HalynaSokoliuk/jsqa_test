@@ -523,7 +523,7 @@ console.h1('Task 05.01');
 // Запиши її назву у нову глобальну змінну 'createdByConstructor'.
 // TODO: пиши свій код тут:
 
-let createdByConstructor;
+let createdByConstructor = student.birthdayDate;
 
 if (createdByConstructor && createdByConstructor === 'birthdayDate') {
 	console.log('\n\tThanks! This task is done');
@@ -537,13 +537,15 @@ console.h1('Task 05.02');
 // TODO: пиши код тут:
 console.log('\n\tPlease implement this task and few tests to check it');
 
-// 05.02.1 Який з цих прикладів є невірним зразком створення та ініціалізації змінної:
+console.log("05.02.1 Який з цих прикладів є невірним зразком створення та ініціалізації змінної:");
 // 1. var a;
 // 2. var b = 10;
 // 3. const c = "20";
 // 4. d = function(){};
 // 
-// 
+console.log("4. d = function(){}");
+
+console.log("05.02.2 Створи змінні наступних типів. Для тих типів, де це неможливо, напиши коментар 'Типу не існує'");
 // 05.02.2 Створи змінні наступних типів. Для тих типів, де це неможливо, напиши коментар "Типу не існує"
 // 
 // 1. string
@@ -553,7 +555,8 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 5. boolean
 // 6. interface
 // 7. undefined
-// 
+
+console.log("2. char \n 3. int \n 4. float \n  6. interface");
 // 
 // 05.02.3 Знайди тут оператор строгого порівняння та випишіть його:
 // 
@@ -562,14 +565,19 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 3. &&
 // 4. ===
 // 5. EQ
-// 
+//
+console.log("05.02.3 Знайди тут оператор строгого порівняння та випишіть його:");
+ console.log("4. ===");
+
 // 
 // 05.02.4 Який з цих виразів є помилковим?
 // 
 // 1. x * y == z
 // 2. x + y = z
 // 3. x = y + (z = i / (k = m * n))
-// 
+
+console.log("05.02.4 Який з цих виразів є помилковим?");
+console.log("2. x + y = z");
 // 
 // 05.02.5 Який з цих операторів означає "логічне АБО"?
 // 
@@ -577,7 +585,8 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 2. OR
 // 3. |
 // 
-// 
+console.log("05.02.5 Який з цих операторів означає \"логічне АБО\"?");
+console.log("1. ||"); 
 // 05.02.6 Який з цих операторів означає "логічне ТА"?
 // 
 // 1. AND
@@ -585,20 +594,26 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 3. &&
 // 4. &
 // 
-// 
+console.log("05.02.6 Який з цих операторів означає \"логічне ТА\"?");
+console.log("3. &&");
+
 // 05.02.7 Чи правда, що оператор ‘typeof’ використовується для:
 // 
 // 1. Отримання назви типу?
 // 2. Отримання посилання на констуктор?
 // 
-// 
+
+console.log("05.02.7 Чи правда, що оператор ‘typeof’ використовується для:");
+console.log("1. Отримання назви типу? - YES");
+
 // 05.02.8 Які з цих прикладів є невірним використанням оператора умовного присвоєння?
 // 
 // 1. var y = x := z | m;
 // 2. var y = x : z ? m;
 // 3. var y = x ? z : m;
 // 
-// 
+console.log("05.02.8 Які з цих прикладів є невірним використанням оператора умовного присвоєння?");
+console.log("3. var y = x ? z : m;");
 // 
 // 05.02.9 Де тут — правильний функціональний вираз?
 // 
@@ -607,7 +622,8 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 3. var z = new Function('argument', '// TODO')
 // 4. var y = function(){}
 // 
-// 
+console.log("05.02.9 Де тут — правильний функціональний вираз?");
+console.log(" 3. var z = new Function('argument', '// TODO') \n 4. var y = function(){}");
 // 
 // 05.02.10 Де конкатенація рядків зроблена з помилкою?
 // 
@@ -615,6 +631,8 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 2. "str1" ~ "str2"
 // 3. "str1".concat("str2")
 // 3. String.concat("str1", "str2")
+console.log("05.02.10 Де конкатенація рядків зроблена з помилкою?");
+console.log("2. 'str1' ~ 'str2' \n 3. String.concat(\"str1", "str2\") ");
 
 console.h1('Task 05.03');
 
@@ -622,9 +640,13 @@ console.h1('Task 05.03');
 // Знайди у файлові даного уроку перший коментар, що починається з "// FIXME" і виконай його,
 // записавши результуючий код тут.
 
-// TODO: пиши код тут:
-console.log('\n\tPlease implement this task');
 
+Tree.prototype.showName = function(){
+	return console.log("You created the tree with name ", this.name);
+}
 
+theTree.showName();
+
+//console.log('\n\tPlease implement this task');
 
 console.h1('Lesson 05 - Homework End');
