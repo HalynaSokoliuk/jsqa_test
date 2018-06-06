@@ -275,20 +275,31 @@
 		return function func1InternalFunc() {}
 	}
 
-	// TODO: дай відповідь тут:
+	// TODO: дай відповідь тут: 
+	console.log("Yes");
 
 	console.log('\nTask 07.02');
 	console.log('\n\t Please implement this task');
 
 	// Points: 1
-	// Напиши функцію-замикання -- будь-яку.
-	// TODO: пиши код тут:
+	// TODO: пиши код	// Напиши функцію-замикання -- будь-яку.
+ //тут:
+
+	function start(){
+		var startSpeak = function(){
+			return console.log('Hello!!!', 'Nice to meet You!!');
+		}
+		return startSpeak;
+	}
+	var startConversation = start();
+	startConversation();
 
 	function sillyClosure() {
 		return this;
 	}
 
-	console.log(sillyClosure())
+		//console.log(sillyClosure())
+
 
 	console.log('\nTask 07.03');
 	console.log('\n\t Please implement this task');
@@ -302,6 +313,21 @@
 	}
 
 	// TODO: пиши відповідь словами тут:
+	// Answer: Потрібно дописати функцію що вертатиме iAmEnclosed
+	// Приклад:
+
+	function iAmClosure() {
+		var iAmEnclosed = 'secret';
+		function inside (){
+			return iAmEnclosed
+		}
+		return inside;
+	}
+
+
+	var secretValue = iAmClosure();
+	console.log(secretValue());
+
 	// WRONG 1:
 	function iAmClosureTwo() {
 		var iAmEnclosed = 'secret';
@@ -362,6 +388,23 @@
 
 	var accessEnclosed = iAmClosureFour();
 	var disclosedInternalFour = accessEnclosed();
-
+	
+	console.log(disclosedInternalFour.property);
+	console.log(disclosedInternalFour.propertyAlso);
 })();
+
+console.log('------------------------------')
+function myFunc(){
+	var myVar = 'My var';
+	function getMyVar(){
+		return myVar;
+	}
+	return getMyVar;
+}
+
+var myVar = myFunc();
+console.log(myVar());
+
 // Завершення глобальної анонімної функції
+
+

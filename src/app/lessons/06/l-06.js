@@ -479,14 +479,17 @@ const glo = 'glo site';
 
 	console.log('\nPlease implement this task');
 
-	function blackBox(hidden){
-		return (function insider(){
-			return hidden;
-		})();
-	};
 
-	console.log(blackBox("Secret"));
- 
+	function insider(a){
+		return a;
+	} 
+
+	function blackBox(hidden) {
+			return insider(hidden);
+	};
+	console.log(blackBox('secret'));
+
+
 	console.log('\nLesson 06 - Homework End');
 
 })();
