@@ -415,17 +415,27 @@
     // Напиши функцію useAnonymousCallback, що приймає параметр callback, і виклич її, 
     // передавши анонімну функцію в якості параметра.
     // TODO: пиши тут:
-
-    console.log('Please implement this task');
+    function useAnonymousCallback(callback){
+        typeof callback == "function" ? callback() : false;
+    };
+    useAnonymousCallback(console.log("Homework 08.01 DONE !!!!"))
+    
+    console.log('DONE');  
 
     console.log('\nTask 08.02');
     // Points: 2
     // Напиши функцію useAnonymousCallback, що приймає параметр callback, і виклич її, 
     // передавши їй в якості параметра іменовану функцію.
 
-    console.log('Please implement this task');
+    function useAnonymousCallback(callback){
+        typeof callback == "function" ? callback() : false;
+    };
+    function callFunc(a){
+        return console.log(a*a);
+    };
+    useAnonymousCallback(callFunc(10));
     
-
+    console.log('DONE');  
     console.log('\nTask 08.03');
     // Points: 3
     // Напиши функцію workingCallback, що приймає у якості параметра іменовану функцію
@@ -434,7 +444,17 @@
     // значення змінної enclosed через замикання.
     // TODO: пиши тут:
 
-    console.log('Please implement this task');    
+    function workingCallback(callback){
+        let enclosed = 'enclosed'; 
+        typeof callback == "function" ? callback(enclosed) : false;
+    }
+
+    function showEnclosed(x){
+        console.log("Show enclosed", x);
+    }
+    workingCallback(showEnclosed);
+
+    console.log('DONE');    
 
     console.h1('Lesson 08 - Homework End');
 
