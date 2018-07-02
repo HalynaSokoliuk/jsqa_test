@@ -50,7 +50,7 @@
         let parts = ns_string.split('.');
         let parent = JSQA_APP;
         if (parts[0] === "JSQA_APP") parts = parts.slice(1);
-        for (let i = 0; i < parts.length; i++) {
+        for (let i = 0; i < parts.length; i++) { 
             if (typeof parent[parts[i]] === 'undefined') parent[parts[i]] = {};
             parent = parent[parts[i]];
         }
@@ -214,7 +214,9 @@
     // Points: 1
     // Вище у цьому файлі за допомогою функції JSQA_APP.namespace() глобальний об'єкт JSQA_APP наповнено внутрішніми просторами імен
     // Виведи у консоль значення об'єкта JSQA_APP і проаналізуй побачене. Чи розумієш ти, як утворилася такка структура?
-
+ 
+    console.log(JSQA_APP);
+    console.log("Наповнюючи глобальний обєкт через namespace програма аналізує чи додавати обєкт до існуючого чи створювати новий");
     console.h2('Task 09.02');
     console.log('Please implement this task');
     // Points: 2
@@ -223,6 +225,9 @@
     // Знову виведи у консоль значення об'єкта JSQA_APP і переконайся, що новий модуль з'явився у об'єкті
     // Tip: для зручності і краси, можна виводити так: 
     // console.log(JSON.stringify(JSQA_APP, null, '  '));
+    JSQA_APP.namespace('JSQA_APP.modules.mainModule');
+    console.log(JSON.stringify(JSQA_APP, null, '  '));
+
 
     console.h2('Task 09.03');
     console.log('Please implement this task');
@@ -230,11 +235,40 @@
     // Користуючись прикладом шаблону "Приватні властивості і методи" вище, створи новий об'єкт student з приватною властивіcтю id,
     // що буде доступною тільки для читання через публічний метод getId()
 
+    var student =(function(){
+        let id = "My id";
+        return {
+            getId: function(){
+                console.log(id);
+            }
+        }
+    })();
+
+   student.getId();
+
     console.h2('Task 09.04');
     console.log('Please implement this task');
     // Points: 4
     // Користуючись прикладом шаблону "Модуль" вище, додай до об'єкта student приватний метод analyzeHomeworkTask(homework_id),
     // що буде доступний через публічний метод doHomework(homework_id)
+    var student =(function(){
+        let id = "My id";
+        function analyzeHomeworkTask(homework_id){
+            console.log("Your homework with id " + homework_id + " is analyzing...." );
+            }
+        return {
+            getId: function(){
+                console.log(id);
+            },
+            doHomework: function (homework_id){
+                analyzeHomeworkTask(homework_id);
+            }
+        }
+    })();
+
+    student.doHomework(11111);
+
+
 
     console.h1('Lesson 09 - Homework End');
 
